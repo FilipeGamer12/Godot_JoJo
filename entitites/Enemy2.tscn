@@ -137,8 +137,10 @@ shape = SubResource("RectangleShape2D_mrhvv")
 position = Vector2(0.812499, 1.625)
 scale = Vector2(0.332627, 0.332627)
 sprite_frames = SubResource("SpriteFrames_7et56")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="Node2D" type="Node2D" parent="."]
 

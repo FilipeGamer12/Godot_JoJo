@@ -240,7 +240,7 @@ region_rect = Rect2(0, 0, 576, 208)
 [node name="Node2D" parent="." instance=ExtResource("1_ktbmo")]
 light_mask = 2
 visibility_layer = 13
-position = Vector2(16, 159)
+position = Vector2(26, 159)
 
 [node name="moveControls" type="Label" parent="."]
 modulate = Color(0, 0, 0, 1)

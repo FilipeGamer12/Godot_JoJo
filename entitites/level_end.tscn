@@ -6,11 +6,10 @@
 size = Vector2(20, 34)
 
 [node name="LevelEnd" type="Area2D" groups=["LevelEnd"]]
+collision_mask = 2
 script = ExtResource("1_v06a4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 8
-visibility_layer = 2
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_7luy0")
 
