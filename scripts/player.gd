@@ -23,6 +23,7 @@ enum PlayerState {
 
 var status: PlayerState
 
+
 func _ready() -> void:
 	go_to_idle_state()
 
@@ -171,9 +172,15 @@ func REreload_scene():
 func _on_hitbox_area_entered(area):
 	if area.is_in_group("enemy1_attack") or area.is_in_group("enemy2_attack"):
 		if status != PlayerState.damage:
+			print("Player tomou dano!")
 			health -= 1
+			print(health)
 			go_to_damage_state()
 
 func _on_idle_animation_finished():
 	if animIdle.animation == "counter":
 		go_to_idle_state()
+
+
+func _on_hitbox_area_exited(area):
+	pass # Replace with function body.
