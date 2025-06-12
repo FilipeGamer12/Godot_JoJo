@@ -451,6 +451,7 @@ position = Vector2(1616, 88)
 next_level = "fase_3"
 
 [node name="DeathZone" parent="." instance=ExtResource("9_3rj3r")]
+collision_mask = 2
 
 [node name="CollisionShape2D" parent="DeathZone" index="0" groups=["DeathZone"]]
 position = Vector2(875, 210)
