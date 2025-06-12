@@ -11,8 +11,6 @@ const STAND_PLAYER = preload("res://entitites/stand_player.tscn")
 var jump_count = 0
 var stand: CharacterBody2D
 var health = 10
-
-var em_dano = false
 var counter_cooldown := 0.0
 
 enum PlayerState {
@@ -29,33 +27,29 @@ func _ready() -> void:
 	go_to_idle_state()
 
 func _physics_process(delta: float) -> void:
-	
-	counter_cooldown = max(0.0, counter_cooldown - delta)
-	
+	counter_cooldown = max(0, counter_cooldown - delta)
+
 	if Input.is_action_just_pressed("stand"):
 		if stand == null:
 			stand = STAND_PLAYER.instantiate()
+			stand.position = position
 			stand.player = self
 			add_sibling(stand)
 		else:
 			stand.queue_free()
-	
-	# Add the gravity.
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	else: 
+	if is_on_floor():
 		jump_count = 0
-	
-	if Input.is_action_just_pressed("punch"):
-		if stand != null:
-			stand.punch()
-	if Input.is_action_just_pressed("light_punch"):
-		if stand != null:
-			stand.light_punch()
-	if Input.is_action_just_pressed("heavy_punch"):
-		if stand != null:
-			stand.heavy_punch()
-	
+
+	if Input.is_action_just_pressed("punch") and stand:
+		stand.punch()
+	if Input.is_action_just_pressed("light_punch") and stand:
+		stand.light_punch()
+	if Input.is_action_just_pressed("heavy_punch") and stand:
+		stand.heavy_punch()
+
 	match status:
 		PlayerState.idle:
 			idle_state()
@@ -67,7 +61,7 @@ func _physics_process(delta: float) -> void:
 			counter()
 		PlayerState.damage:
 			damage_state()
-	
+
 	move_and_slide()
 
 ## MÁQUINA DE ESTADOS
@@ -90,51 +84,39 @@ func go_to_counter_state():
 
 func go_to_damage_state():
 	status = PlayerState.damage
-	#print("TOME!")
-	velocity.x = 0
 	animIdle.play("damage")
+	velocity.x = 0
 
 func counter():
 	if animIdle.frame == 3:
 		damageP.process_mode = Node.PROCESS_MODE_ALWAYS
-		#print("dano JOTARO ativo")
 	else:
 		damageP.process_mode = Node.PROCESS_MODE_DISABLED
-		#print("dano JOTARO não ativo")
 
 func idle_state():
 	move()
 	if velocity.x != 0:
 		go_to_walk_state()
-		return
 	if Input.is_action_just_pressed("jump"):
 		go_to_jump_state()
-		return
-	if Input.is_action_just_pressed("counter") and counter_cooldown == 0.0:
+	if Input.is_action_just_pressed("counter") and counter_cooldown <= 0.0:
 		go_to_counter_state()
 		counter_cooldown = 2.0
-		return
-	
+
 func walk_state():
 	move()
 	if velocity.x == 0:
 		go_to_idle_state()
-		return
 	if Input.is_action_just_pressed("jump"):
 		go_to_jump_state()
-		return
-	
+
 func jump_state():
 	move()
 	if is_on_floor():
 		if velocity.x != 0:
-			animRunning.play("running")
-			animRunning.visibility_layer = true
-			animIdle.visibility_layer = false
+			go_to_walk_state()
 		else:
-			animIdle.play("idle")
-			animRunning.visibility_layer = false
-			animIdle.visibility_layer = true
+			go_to_idle_state()
 
 func damage_state():
 	if health <= 0:
@@ -167,16 +149,13 @@ func move():
 
 	if velocity.x > 0:
 		animIdle.flip_h = false
-		if stand != null:
+		if stand:
 			stand.inverter(false)
 	elif velocity.x < 0:
 		animIdle.flip_h = true
-		if stand != null:
+		if stand:
 			stand.inverter(true)
-	
-	if velocity.y != 0:
-		go_to_jump_state()
-	
+
 	if Input.is_action_just_pressed("jump") and jump_count < max_jump_count:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
@@ -192,15 +171,8 @@ func REreload_scene():
 func _on_hitbox_area_entered(area):
 	if area.is_in_group("enemy1_attack") or area.is_in_group("enemy2_attack"):
 		if status != PlayerState.damage:
-			print("Player tomou dano!")
 			health -= 1
 			go_to_damage_state()
-
-func _on_hitbox_area_exited(area):
-	if area.is_in_group("enemy1_attack") or area.is_in_group("enemy2_attack"):
-		em_dano = false
-		if status == PlayerState.damage:
-			go_to_idle_state()
 
 func _on_idle_animation_finished():
 	if animIdle.animation == "counter":
