@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dadg7x2vgmn0o"]
+[gd_scene load_steps=6 format=3 uid="uid://dadg7x2vgmn0o"]
 
 [ext_resource type="PackedScene" uid="uid://bad04yp2jw8kb" path="res://entitites/Player.tscn" id="1_errlg"]
+[ext_resource type="PackedScene" uid="uid://37mt24b3fowb" path="res://entitites/Enemy_Dummy.tscn" id="2_bl13t"]
+[ext_resource type="PackedScene" uid="uid://cprk6n827bddb" path="res://entitites/enemy_3.tscn" id="3_iyx0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij1v8"]
 size = Vector2(288, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyx0m"]
+size = Vector2(20, 188)
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,3 +20,13 @@ shape = SubResource("RectangleShape2D_ij1v8")
 
 [node name="Node2D" parent="RigidBody2D" instance=ExtResource("1_errlg")]
 position = Vector2(29, 161)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-10, 95)
+shape = SubResource("RectangleShape2D_iyx0m")
+
+[node name="Enemy_Dummy" parent="." instance=ExtResource("2_bl13t")]
+position = Vector2(146, 164)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_iyx0m")]
+position = Vector2(198, 161)

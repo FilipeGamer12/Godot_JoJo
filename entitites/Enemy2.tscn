@@ -139,10 +139,6 @@ scale = Vector2(0.332627, 0.332627)
 sprite_frames = SubResource("SpriteFrames_7et56")
 animation = &"death"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
-
-[node name="Node2D" type="Node2D" parent="."]
 
 [node name="Detector de chão" type="RayCast2D" parent="."]
 position = Vector2(13, -14)

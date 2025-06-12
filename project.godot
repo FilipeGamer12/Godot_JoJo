@@ -39,6 +39,7 @@ light_attack=""
 normal_attack=""
 heavy_attack=""
 enemy2_attack=""
+enemy1_attack=""
 
 [input]
 

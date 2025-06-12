@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var animIdle: AnimatedSprite2D = $Idle
 @onready var animRunning: AnimatedSprite2D = $Running
 @onready var damageP = $DamageP
+@onready var hitbox = $hitbox
 
 const SPEED = 60.0
 const JUMP_VELOCITY = -330.0
@@ -10,7 +11,7 @@ const JUMP_VELOCITY = -330.0
 const STAND_PLAYER = preload("res://entitites/stand_player.tscn")
 var jump_count = 0
 var stand: CharacterBody2D
-var health = 10
+var health = 12
 var counter_cooldown := 0.0
 
 enum PlayerState {
@@ -150,10 +151,12 @@ func move():
 
 	if velocity.x > 0:
 		animIdle.flip_h = false
+		damageP.scale.x = 1
 		if stand:
 			stand.inverter(false)
 	elif velocity.x < 0:
 		animIdle.flip_h = true
+		damageP.scale.x = -1
 		if stand:
 			stand.inverter(true)
 
@@ -170,17 +173,19 @@ func REreload_scene():
 	get_tree().change_scene_to_file("res://scenes/gameOver.tscn")
 
 func _on_hitbox_area_entered(area):
-	if area.is_in_group("enemy1_attack") or area.is_in_group("enemy2_attack"):
+	if area.is_in_group("enemy2_attack"):
 		if status != PlayerState.damage:
 			print("Player tomou dano!")
 			health -= 1
+			print(health)
+			go_to_damage_state()
+	if area.is_in_group("enemy1_attack"):
+		if status != PlayerState.damage:
+			print("Player tomou dano!")
+			health -= 2
 			print(health)
 			go_to_damage_state()
 
 func _on_idle_animation_finished():
 	if animIdle.animation == "counter":
 		go_to_idle_state()
-
-
-func _on_hitbox_area_exited(area):
-	pass # Replace with function body.

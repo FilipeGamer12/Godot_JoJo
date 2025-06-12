@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var damage = $DamageE2
 @onready var whiteSnake_anim: AnimatedSprite2D = $AnimatedSprite2D
-@onready var enemy_2 = $".."
+@onready var enemy_2 = $"Enemy2"
 
 signal animation_finished
 
@@ -20,7 +20,6 @@ func _physics_process(delta: float) -> void:
 	if enemy_2 == null or status == StandState.punch:
 		return
 
-	# Ajuste simples: fique a OFFSET unidades à direita do inimigo
 	var target_x: float = enemy_2.position.x + OFFSET
 
 	if abs(position.x - target_x) > 1.0:

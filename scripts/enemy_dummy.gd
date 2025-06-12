@@ -2,7 +2,7 @@ extends CharacterBody2D
 @onready var hitbox: Area2D = $Hitbox
 @onready var anim_dummy: AnimatedSprite2D = $AnimatedSprite2D
 
-var health = 3
+var health = 100
 
 signal died(position: Vector2)
 
@@ -21,9 +21,15 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("heavy_attack"):
 		health -= 3
 		print("heavy")
-		
+	anim_dummy.play("damage")
+	
 	if health <= 0:
 		anim_dummy.play("died")
 		await get_tree().create_timer(0.6).timeout
 		emit_signal("died", global_position)
 		queue_free()
+
+
+func _on_animated_sprite_2d_animation_finished():
+	if anim_dummy.animation == "damage":
+		anim_dummy.play("idle")

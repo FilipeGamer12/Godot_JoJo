@@ -1,13 +1,90 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1go3n3bd46yf"]
+[gd_scene load_steps=39 format=3 uid="uid://c1go3n3bd46yf"]
 
+[ext_resource type="Script" uid="uid://bgq2lr1h2kycv" path="res://scripts/stand_dio.gd" id="1_47u1d"]
 [ext_resource type="Texture2D" uid="uid://dgqs38ff2vuo" path="res://others/DIO/Stand Dio/10000-0.png" id="1_axd1v"]
 [ext_resource type="Texture2D" uid="uid://dbhffusncd8fk" path="res://others/DIO/Stand Dio/10000-1.png" id="2_47u1d"]
+[ext_resource type="Texture2D" uid="uid://t0nb7ta7mbmb" path="res://others/DIO/Stand Dio/11000-1.png" id="2_rgavw"]
+[ext_resource type="Texture2D" uid="uid://cy4ycwqcfs6h" path="res://others/DIO/Stand Dio/11000-2.png" id="3_0xk3v"]
 [ext_resource type="Texture2D" uid="uid://deds61uri4pc8" path="res://others/DIO/Stand Dio/10000-2.png" id="3_k7h8a"]
+[ext_resource type="Texture2D" uid="uid://c3cm60qcpeqju" path="res://others/DIO/Stand Dio/11000-3.png" id="4_geud3"]
 [ext_resource type="Texture2D" uid="uid://bi7e2rbym1rq" path="res://others/DIO/Stand Dio/10000-3.png" id="4_uahea"]
 [ext_resource type="Texture2D" uid="uid://cvf3m0i7rt7c2" path="res://others/DIO/Stand Dio/10000-4.png" id="5_tptll"]
+[ext_resource type="Texture2D" uid="uid://7eauaq35y24b" path="res://others/DIO/Stand Dio/11000-4.png" id="5_xe7c8"]
+[ext_resource type="Texture2D" uid="uid://32e7a1x82566" path="res://others/DIO/Stand Dio/11000-5.png" id="6_08e2o"]
+[ext_resource type="Texture2D" uid="uid://2qx4cq7jl7w" path="res://others/DIO/Stand Dio/11000-6.png" id="7_edous"]
+[ext_resource type="Texture2D" uid="uid://dnilpvsk2mdn4" path="res://others/DIO/Stand Dio/11000-7.png" id="8_w5nlu"]
+[ext_resource type="Texture2D" uid="uid://cqb1d52hdpx7k" path="res://others/DIO/Stand Dio/11000-8.png" id="9_vvicj"]
+[ext_resource type="Texture2D" uid="uid://c0qvnjv5uqn15" path="res://others/DIO/Stand Dio/11000-9.png" id="10_pymap"]
+[ext_resource type="Texture2D" uid="uid://cxe78gqi6mhen" path="res://others/DIO/Stand Dio/11000-10.png" id="11_aqelj"]
+[ext_resource type="Texture2D" uid="uid://dneshyc6i2tob" path="res://others/DIO/Stand Dio/11000-11.png" id="12_fveff"]
+[ext_resource type="Texture2D" uid="uid://bec1fc7ifbhju" path="res://others/DIO/Stand Dio/11000-12.png" id="13_yqqem"]
+[ext_resource type="Texture2D" uid="uid://kfxlc4j6e0c0" path="res://others/DIO/Stand Dio/11000-13.png" id="14_80y8f"]
+[ext_resource type="Texture2D" uid="uid://bsyl0y2sv8cwt" path="res://others/DIO/Stand Dio/11000-14.png" id="15_ok8ic"]
+[ext_resource type="Texture2D" uid="uid://bfeqn24ws0adg" path="res://others/DIO/Stand Dio/10220-0.png" id="21_3t2h2"]
+[ext_resource type="Texture2D" uid="uid://b1jamuqh42ldk" path="res://others/DIO/Stand Dio/10220-1.png" id="22_sbb67"]
+[ext_resource type="Texture2D" uid="uid://dpsyck0najbn6" path="res://others/DIO/Stand Dio/10220-2.png" id="23_m2cp1"]
+[ext_resource type="Texture2D" uid="uid://b8qi7wmqojfrg" path="res://others/DIO/Stand Dio/10220-3.png" id="24_4attq"]
+[ext_resource type="Texture2D" uid="uid://op6l0n0cuvnv" path="res://others/DIO/Stand Dio/10220-4.png" id="25_p70g4"]
+[ext_resource type="Texture2D" uid="uid://cgjh8uadsmxvl" path="res://others/DIO/Stand Dio/10220-5.png" id="26_2d7fs"]
+[ext_resource type="Texture2D" uid="uid://dg2igcxwkswfh" path="res://others/DIO/Stand Dio/10220-6.png" id="27_ss2fe"]
+[ext_resource type="Texture2D" uid="uid://06oy1846v7if" path="res://others/DIO/Stand Dio/10220-7.png" id="28_n5dre"]
+[ext_resource type="Texture2D" uid="uid://drwx8rlwcausc" path="res://others/DIO/Stand Dio/10210-0.png" id="29_roqal"]
+[ext_resource type="Texture2D" uid="uid://bxna34g5hncho" path="res://others/DIO/Stand Dio/10210-1.png" id="30_m3crv"]
+[ext_resource type="Texture2D" uid="uid://dbgv4glld7kwa" path="res://others/DIO/Stand Dio/10210-2.png" id="31_ijmef"]
+[ext_resource type="Texture2D" uid="uid://blff6pps027sg" path="res://others/DIO/Stand Dio/10210-3.png" id="32_lr6n1"]
+[ext_resource type="Texture2D" uid="uid://dy8qhre4rio3r" path="res://others/DIO/Stand Dio/10210-4.png" id="33_avl4x"]
+[ext_resource type="Texture2D" uid="uid://hs75ekuil5cq" path="res://others/DIO/Stand Dio/10210-5.png" id="34_0k008"]
+[ext_resource type="Texture2D" uid="uid://b1lly525grid2" path="res://others/DIO/Stand Dio/10210-6.png" id="35_m7bke"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gr2s7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rgavw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0xk3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_geud3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xe7c8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_08e2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_edous")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w5nlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vvicj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pymap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_aqelj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fveff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yqqem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_80y8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ok8ic")
+}],
+"loop": false,
+"name": &"barrage",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_axd1v")
@@ -25,21 +102,97 @@ animations = [{
 "texture": ExtResource("5_tptll")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_3t2h2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_sbb67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_m2cp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_4attq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_p70g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_2d7fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ss2fe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_n5dre")
+}],
+"loop": false,
+"name": &"kick",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_roqal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_m3crv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ijmef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_lr6n1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_avl4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_0k008")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_m7bke")
+}],
+"loop": false,
+"name": &"punch",
+"speed": 13.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yaxlw"]
 size = Vector2(19.75, 44)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgavw"]
+radius = 11.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = -2
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_47u1d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(29.25, 48.1765)
+position = Vector2(3.25001, -0.176453)
 scale = Vector2(0.311765, 0.311765)
 sprite_frames = SubResource("SpriteFrames_gr2s7")
-frame_progress = 0.887718
+animation = &"punch"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(26, 48)
+position = Vector2(1.14441e-05, -0.352951)
 shape = SubResource("RectangleShape2D_yaxlw")
+
+[node name="DamageE1" type="Area2D" parent="." groups=["enemy1_attack"]]
+process_mode = 3
+collision_layer = 8
+collision_mask = 2
+
+[node name="damage" type="CollisionShape2D" parent="DamageE1" groups=["enemy1_attack"]]
+position = Vector2(15, -9)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_rgavw")
+debug_color = Color(0.839893, 0.383703, 3.85046e-07, 0.42)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

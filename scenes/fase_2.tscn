@@ -471,5 +471,7 @@ position = Vector2(656, 154)
 [node name="Enemy4" parent="." instance=ExtResource("12_td0eq")]
 position = Vector2(927, 26)
 
+[connection signal="area_entered" from="DeathZone" to="Node2D" method="_on_death_zone_area_entered"]
+
 [editable path="Node2D"]
 [editable path="DeathZone"]
