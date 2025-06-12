@@ -133,7 +133,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 8.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnbxw"]
@@ -153,8 +153,9 @@ shape = SubResource("RectangleShape2D_cjrad")
 position = Vector2(2.38419e-07, 7.45058e-09)
 scale = Vector2(0.310606, 0.310606)
 sprite_frames = SubResource("SpriteFrames_hclb4")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
+frame_progress = 0.913164
 
 [node name="Detector de chão" type="RayCast2D" parent="."]
 position = Vector2(12, -13)

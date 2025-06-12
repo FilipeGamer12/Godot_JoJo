@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var heavy_punch_sound = $heavy_punch
 @onready var counter_sound = $counter
 @onready var stand_sound = $stand
+@onready var health_label = $HealthLabel
 
 const SPEED = 60.0
 const JUMP_VELOCITY = -330.0
@@ -16,7 +17,10 @@ const JUMP_VELOCITY = -330.0
 const STAND_PLAYER = preload("res://entitites/stand_player.tscn")
 var jump_count = 0
 var stand: CharacterBody2D
+
 var health = 12
+var max_health = 12
+
 var counter_cooldown := 0.0
 
 enum PlayerState {
@@ -32,6 +36,12 @@ var status: PlayerState
 
 func _ready() -> void:
 	go_to_idle_state()
+	update_health_label()
+	$HealthLabel.scale = Vector2(0.5, 0.5)
+
+func update_health_label():
+	var percentage := int(float(health) / float(max_health) * 100.0)
+	health_label.text = "HP: " + str(percentage) + "%"
 
 func _physics_process(delta: float) -> void:
 	counter_cooldown = max(0, counter_cooldown - delta)
@@ -188,12 +198,14 @@ func _on_hitbox_area_entered(area):
 			print("Player tomou dano!")
 			health -= 1
 			print(health)
+			update_health_label()
 			go_to_damage_state()
 	if area.is_in_group("enemy1_attack"):
 		if status != PlayerState.damage:
 			print("Player tomou dano!")
 			health -= 2
 			print(health)
+			update_health_label()
 			go_to_damage_state()
 
 func _on_idle_animation_finished():

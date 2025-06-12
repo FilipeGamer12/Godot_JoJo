@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dadg7x2vgmn0o"]
+[gd_scene load_steps=7 format=3 uid="uid://dadg7x2vgmn0o"]
 
 [ext_resource type="PackedScene" uid="uid://bad04yp2jw8kb" path="res://entitites/Player.tscn" id="1_errlg"]
 [ext_resource type="PackedScene" uid="uid://37mt24b3fowb" path="res://entitites/Enemy_Dummy.tscn" id="2_bl13t"]
-[ext_resource type="PackedScene" uid="uid://cprk6n827bddb" path="res://entitites/enemy_3.tscn" id="3_iyx0m"]
+[ext_resource type="PackedScene" uid="uid://w0aoap7ccnac" path="res://entitites/Enemy2.tscn" id="3_iyx0m"]
+[ext_resource type="PackedScene" uid="uid://cprk6n827bddb" path="res://entitites/enemy_3.tscn" id="4_74lek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij1v8"]
 size = Vector2(288, 20)
@@ -28,5 +29,8 @@ shape = SubResource("RectangleShape2D_iyx0m")
 [node name="Enemy_Dummy" parent="." instance=ExtResource("2_bl13t")]
 position = Vector2(146, 164)
 
-[node name="Enemy3" parent="." instance=ExtResource("3_iyx0m")]
-position = Vector2(213, 167)
+[node name="Enemy2" parent="." instance=ExtResource("3_iyx0m")]
+position = Vector2(170, 240)
+
+[node name="Enemy3" parent="." instance=ExtResource("4_74lek")]
+position = Vector2(207, 167)

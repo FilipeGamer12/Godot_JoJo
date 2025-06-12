@@ -138,5 +138,6 @@ func _on_idle_animation_finished():
 		ir_para_andando()
 	if anim.animation == "damage":
 		ir_para_andando()
+		stand.go_to_idle_state()
 	if anim.animation == "death":
 		queue_free()

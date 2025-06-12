@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 30.0
+var speed = 32.0
 
 enum EnemyState {
 	andando, 
@@ -133,5 +133,6 @@ func _on_hitbox_area_entered(area):
 func _on_anim_animation_finished():
 	if anim.animation == "damage":
 		ir_para_andando()
+		stand.go_to_idle_state()
 	if anim.animation == "death":
 		queue_free()
