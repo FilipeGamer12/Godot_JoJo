@@ -8,16 +8,33 @@
 script = ExtResource("1_yqeox")
 
 [node name="title" type="Label" parent="."]
-z_index = 1
+z_index = 5
 offset_left = 48.0
 offset_top = 27.0
 offset_right = 236.0
-offset_bottom = 90.0
+offset_bottom = 114.0
+theme_type_variation = &"HeaderMedium"
 theme_override_fonts/font = ExtResource("2_vjb58")
-text = "Jogo Bom
-"
+text = "Go-dot
+Jo-Jo!"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = 4
+offset_left = 15.0
+offset_top = -2.0
+offset_right = 277.0
+offset_bottom = 146.0
+theme_type_variation = &"HeaderMedium"
+theme_override_fonts/font = ExtResource("2_vjb58")
+text = "Go-dot
+Jo-Jo!"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [node name="play button" type="Button" parent="."]
 z_index = 1

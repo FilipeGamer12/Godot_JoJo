@@ -6,14 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://caadkwhps1ht5" path="res://sprites/4 - Winter World/Background parts/2 - Smaller_mountains.png" id="2_u7fro"]
 [ext_resource type="Texture2D" uid="uid://dwwh4cfp2qvro" path="res://sprites/5 - Misc. universal tiles/House (112 x 96).png" id="3_clhhq"]
 [ext_resource type="Texture2D" uid="uid://doorukpp5cdm0" path="res://sprites/4 - Winter World/Background parts/1 - Snowy_foreground_area.png" id="3_ktbmo"]
-[ext_resource type="Texture2D" uid="uid://bee7ump7222al" path="res://others/assets/move_keys.png" id="6_6cnnc"]
 [ext_resource type="FontFile" uid="uid://b6yfq0rse4cxs" path="res://others/fonts/Minecraftia-Regular.ttf" id="6_o5tko"]
-[ext_resource type="Texture2D" uid="uid://dqpd6jydxbaqt" path="res://others/assets/jump_key.png" id="7_o5tko"]
 [ext_resource type="Texture2D" uid="uid://nsgsgfra7eg8" path="res://sprites/4 - Winter World/Winter_entities (16 x 16).png" id="9_m44rk"]
 [ext_resource type="PackedScene" uid="uid://cu2jhrub6b0ft" path="res://entitites/level_end.tscn" id="10_fbhx4"]
 [ext_resource type="PackedScene" uid="uid://c767e3ml71xjo" path="res://entitites/death_zone.tscn" id="12_26t1p"]
+[ext_resource type="Texture2D" uid="uid://bukoob1n725id" path="res://others/assets/controles.png" id="13_gfxju"]
 [ext_resource type="PackedScene" uid="uid://37mt24b3fowb" path="res://entitites/Enemy_Dummy.tscn" id="13_oxdmg"]
 [ext_resource type="PackedScene" uid="uid://b07wlx5vdkvnc" path="res://aula/entidades/camera_player.tscn" id="14_gfxju"]
+[ext_resource type="Texture2D" uid="uid://ct8kwvsmmff7c" path="res://others/assets/seta.png" id="15_lhal5"]
 [ext_resource type="PackedScene" uid="uid://w0aoap7ccnac" path="res://entitites/Enemy2.tscn" id="15_tqwrg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ktbmo"]
@@ -242,29 +242,6 @@ light_mask = 2
 visibility_layer = 13
 position = Vector2(26, 159)
 
-[node name="moveControls" type="Label" parent="."]
-modulate = Color(0, 0, 0, 1)
-z_index = -1
-offset_left = 8.0
-offset_top = 13.0
-offset_right = 186.0
-offset_bottom = 41.0
-scale = Vector2(0.705, 0.705)
-theme_override_fonts/font = ExtResource("6_o5tko")
-text = "Controles Básicos"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MoveKeys" type="Sprite2D" parent="moveControls"]
-position = Vector2(52.4823, 46.8085)
-scale = Vector2(0.157447, 0.147518)
-texture = ExtResource("6_6cnnc")
-
-[node name="JumpKey" type="Sprite2D" parent="moveControls"]
-position = Vector2(130.496, 49.6454)
-scale = Vector2(0.553191, 0.35461)
-texture = ExtResource("7_o5tko")
-
 [node name="InvisibleWall" type="StaticBody2D" parent="."]
 position = Vector2(1279, 174)
 
@@ -297,18 +274,74 @@ position = Vector2(144, 104)
 limit_left = 0
 limit_bottom = 208
 
-[node name="Controles de combate" type="Label" parent="."]
-offset_left = 8.0
-offset_top = 59.0
-offset_right = 218.0
-offset_bottom = 87.0
-scale = Vector2(0.705, 0.705)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_o5tko")
-text = "Controles de Combate"
-
 [node name="Enemy2" parent="." instance=ExtResource("15_tqwrg")]
 position = Vector2(388, 154)
+
+[node name="Controles" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(94, 51)
+scale = Vector2(0.27381, 0.27381)
+texture = ExtResource("13_gfxju")
+
+[node name="moveControls" type="Label" parent="Controles"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+offset_left = -255.652
+offset_top = -153.391
+offset_right = 478.348
+offset_bottom = -37.3913
+scale = Vector2(0.705, 0.705)
+theme_override_fonts/font = ExtResource("6_o5tko")
+theme_override_font_sizes/font_size = 66
+text = "Controles Básicos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Movimentacao" type="Label" parent="Controles"]
+modulate = Color(0.215686, 1, 0, 1)
+offset_left = -281.217
+offset_top = 94.9565
+offset_right = -99.2174
+offset_bottom = 133.957
+theme_override_fonts/font = ExtResource("6_o5tko")
+theme_override_font_sizes/font_size = 22
+text = "Movimentação"
+
+[node name="ataque" type="Label" parent="Controles"]
+modulate = Color(1, 0, 0, 1)
+offset_left = -76.6956
+offset_top = 94.9565
+offset_right = 17.3044
+offset_bottom = 133.957
+theme_override_fonts/font = ExtResource("6_o5tko")
+theme_override_font_sizes/font_size = 22
+text = "Ataque"
+
+[node name="utilitario" type="Label" parent="Controles"]
+modulate = Color(1, 1, 0, 1)
+offset_left = 47.4782
+offset_top = 94.9565
+offset_right = 160.478
+offset_bottom = 133.957
+theme_override_fonts/font = ExtResource("6_o5tko")
+theme_override_font_sizes/font_size = 22
+text = "Utilitário"
+
+[node name="Seta" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(228, 103)
+scale = Vector2(0.0435, 0.0435)
+texture = ExtResource("15_lhal5")
+
+[node name="teste" type="Label" parent="Seta"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -735.632
+offset_top = -597.701
+offset_right = 809.368
+offset_bottom = -236.701
+theme_override_fonts/font = ExtResource("6_o5tko")
+theme_override_font_sizes/font_size = 206
+text = "Inimigo teste"
 
 [connection signal="area_entered" from="DeathZone" to="Node2D" method="_on_death_zone_area_entered"]
 
