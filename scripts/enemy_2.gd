@@ -20,6 +20,7 @@ var invulneravel := false
 @onready var det_parede: RayCast2D = $"Detector de parede"
 @onready var stand_pucci = $Stand_Pucci
 @onready var colisor = $Colisor
+@onready var attack_sound = $attack_sound
 
 var status: EnemyState
 var direction := 1
@@ -70,6 +71,7 @@ func ir_para_atacando():
 	velocity.x = 0
 	anim.play("idle")
 	status = EnemyState.atacando
+	attack_sound.play()
 
 func atacando():
 	velocity.x = 0

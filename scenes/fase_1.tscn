@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=4 uid="uid://w8ycgf60775j"]
+[gd_scene load_steps=24 format=4 uid="uid://w8ycgf60775j"]
 
 [ext_resource type="PackedScene" uid="uid://bad04yp2jw8kb" path="res://entitites/Player.tscn" id="1_ktbmo"]
+[ext_resource type="Script" uid="uid://cr62g4eol6d2n" path="res://scripts/fase_1.gd" id="1_lhal5"]
 [ext_resource type="Texture2D" uid="uid://ccflqsxj7qowu" path="res://sprites/4 - Winter World/Terrain (16 x 16).png" id="1_u7fro"]
 [ext_resource type="Texture2D" uid="uid://daf220wtixwyx" path="res://others/assets/5 - Sky_color.png" id="2_o5tko"]
 [ext_resource type="Texture2D" uid="uid://caadkwhps1ht5" path="res://sprites/4 - Winter World/Background parts/2 - Smaller_mountains.png" id="2_u7fro"]
@@ -15,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b07wlx5vdkvnc" path="res://aula/entidades/camera_player.tscn" id="14_gfxju"]
 [ext_resource type="Texture2D" uid="uid://ct8kwvsmmff7c" path="res://others/assets/seta.png" id="15_lhal5"]
 [ext_resource type="PackedScene" uid="uid://w0aoap7ccnac" path="res://entitites/Enemy2.tscn" id="15_tqwrg"]
+[ext_resource type="AudioStream" uid="uid://ci0fc2r7ma8do" path="res://sounds/fase_1.ogg" id="17_usou6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ktbmo"]
 texture = ExtResource("1_u7fro")
@@ -189,6 +191,7 @@ sources/1 = SubResource("TileSetAtlasSource_26t1p")
 size = Vector2(30, 220.5)
 
 [node name="fase1" type="Node2D"]
+script = ExtResource("1_lhal5")
 metadata/_edit_vertical_guides_ = [1429.0]
 
 [node name="ground" type="TileMapLayer" parent="."]
@@ -342,6 +345,12 @@ offset_bottom = -236.701
 theme_override_fonts/font = ExtResource("6_o5tko")
 theme_override_font_sizes/font_size = 206
 text = "Inimigo teste"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_usou6")
+volume_db = -20.0
+autoplay = true
+playback_type = 1
 
 [connection signal="area_entered" from="DeathZone" to="Node2D" method="_on_death_zone_area_entered"]
 

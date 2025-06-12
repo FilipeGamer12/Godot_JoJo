@@ -8,7 +8,7 @@ enum EnemyState {
 	takeDamage
 }
 
-var health = 2
+var health = 30
 var attack: String
 var invulneravel := false
 

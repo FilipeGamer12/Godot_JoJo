@@ -4,6 +4,11 @@ extends CharacterBody2D
 @onready var animRunning: AnimatedSprite2D = $Running
 @onready var damageP = $DamageP
 @onready var hitbox = $hitbox
+@onready var light_punch_sound = $light_punch
+@onready var punch_sound = $punch
+@onready var heavy_punch_sound = $heavy_punch
+@onready var counter_sound = $counter
+@onready var stand_sound = $stand
 
 const SPEED = 60.0
 const JUMP_VELOCITY = -330.0
@@ -37,6 +42,7 @@ func _physics_process(delta: float) -> void:
 			stand.position = position
 			stand.player = self
 			add_sibling(stand)
+			stand_sound.play()
 		else:
 			stand.queue_free()
 
@@ -47,10 +53,13 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("punch") and stand:
 		stand.punch()
+		punch_sound.play()
 	if Input.is_action_just_pressed("light_punch") and stand:
 		stand.light_punch()
+		light_punch_sound.play()
 	if Input.is_action_just_pressed("heavy_punch") and stand:
 		stand.heavy_punch()
+		heavy_punch_sound.play()
 
 	match status:
 		PlayerState.idle:
@@ -83,6 +92,7 @@ func go_to_jump_state():
 func go_to_counter_state():
 	status = PlayerState.counter
 	animIdle.play("counter")
+	counter_sound.play()
 
 func go_to_damage_state():
 	status = PlayerState.damage

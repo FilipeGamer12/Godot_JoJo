@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://w0aoap7ccnac"]
+[gd_scene load_steps=28 format=3 uid="uid://w0aoap7ccnac"]
 
 [ext_resource type="Texture2D" uid="uid://dacgque1g7if8" path="res://others/pack de sprites de pucci/autor 0011_0-0.png" id="1_8dbq3"]
 [ext_resource type="Script" uid="uid://bot4qywerp2bg" path="res://scripts/enemy_2.gd" id="1_ihmep"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cxi4ux1l2trno" path="res://others/pack de sprites de pucci/autor 0011_20-10.png" id="16_sflpe"]
 [ext_resource type="Texture2D" uid="uid://b51kotwmbubm7" path="res://others/pack de sprites de pucci/autor 0011_20-11.png" id="17_cf08r"]
 [ext_resource type="PackedScene" uid="uid://bcute71j5yuwi" path="res://entitites/stand_enemy2.tscn" id="19_m2nll"]
+[ext_resource type="AudioStream" uid="uid://2w7mfjdkd22t" path="res://sounds/enemies/pucci_attack.ogg" id="24_8t6ll"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrhvv"]
 size = Vector2(21, 39)
@@ -164,6 +165,11 @@ debug_color = Color(0.902452, 0.308624, 0, 0.42)
 [node name="Stand_Pucci" parent="." instance=ExtResource("19_m2nll")]
 process_mode = 3
 position = Vector2(-2, -3)
+
+[node name="attack_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_8t6ll")
+volume_db = -15.0
+playback_type = 1
 
 [connection signal="animation_finished" from="Idle" to="." method="_on_idle_animation_finished"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

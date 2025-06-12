@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct4umk6m63xs3"]
+[gd_scene load_steps=5 format=3 uid="uid://ct4umk6m63xs3"]
 
 [ext_resource type="Script" uid="uid://cahsolpmlwyb5" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="FontFile" uid="uid://b6yfq0rse4cxs" path="res://others/fonts/Minecraftia-Regular.ttf" id="2_vjb58"]
 [ext_resource type="Texture2D" uid="uid://3aes13hf5j7u" path="res://others/assets/background.png" id="3_con2f"]
+[ext_resource type="AudioStream" uid="uid://dfpt5vvhdlhlv" path="res://sounds/Godot_JoJo_main.ogg" id="4_mhnvy"]
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_yqeox")
@@ -58,6 +59,11 @@ text = "Credits
 position = Vector2(143.75, 103.75)
 scale = Vector2(0.281738, 0.203613)
 texture = ExtResource("3_con2f")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_mhnvy")
+autoplay = true
+playback_type = 1
 
 [connection signal="pressed" from="play button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]

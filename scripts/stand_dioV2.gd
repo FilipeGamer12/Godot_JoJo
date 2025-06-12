@@ -3,6 +3,9 @@ extends CharacterBody2D
 @onready var theWorld_anim = $theWorld_anim
 @onready var enemy_3 = $".."
 @onready var dano = $DamageE1
+@onready var barrage_sound = $barrage_sound
+@onready var punch_sound = $punch_sound
+@onready var kick_sound = $kick_sound
 
 signal animation_finished
 
@@ -49,6 +52,13 @@ func go_to_attack_state():
 	current_attack = attacks[randi() % attacks.size()]
 	theWorld_anim.play(current_attack)
 	z_index = 3
+	if current_attack == "barrage":
+		barrage_sound.play()
+	elif current_attack == "kick":
+		kick_sound.play()
+	elif current_attack == "punch":
+		punch_sound.play()
+	
 
 func idle_state():
 	#print(dano.process_mode)

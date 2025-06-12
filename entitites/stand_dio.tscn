@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cggg53oqix8pa"]
+[gd_scene load_steps=42 format=3 uid="uid://cggg53oqix8pa"]
 
 [ext_resource type="Script" uid="uid://ciifhwkkbl4km" path="res://scripts/stand_dioV2.gd" id="1_24qni"]
 [ext_resource type="Texture2D" uid="uid://t0nb7ta7mbmb" path="res://others/DIO/Stand Dio/11000-1.png" id="1_wjv61"]
@@ -35,6 +35,9 @@
 [ext_resource type="Texture2D" uid="uid://dy8qhre4rio3r" path="res://others/DIO/Stand Dio/10210-4.png" id="32_7a2a6"]
 [ext_resource type="Texture2D" uid="uid://hs75ekuil5cq" path="res://others/DIO/Stand Dio/10210-5.png" id="33_wgp6p"]
 [ext_resource type="Texture2D" uid="uid://b1lly525grid2" path="res://others/DIO/Stand Dio/10210-6.png" id="34_2o150"]
+[ext_resource type="AudioStream" uid="uid://dfw8wm6o45of" path="res://sounds/enemies/dio_barrage.ogg" id="36_lq4xe"]
+[ext_resource type="AudioStream" uid="uid://c5uh6ut4v5a0o" path="res://sounds/enemies/dio_punch.ogg" id="37_5w1ba"]
+[ext_resource type="AudioStream" uid="uid://d304n8dte17dm" path="res://sounds/enemies/dio_kick.ogg" id="38_21xpv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixft1"]
 size = Vector2(16, 36)
@@ -178,7 +181,7 @@ shape = SubResource("RectangleShape2D_ixft1")
 position = Vector2(3, 0)
 scale = Vector2(0.273529, 0.273529)
 sprite_frames = SubResource("SpriteFrames_s7mf7")
-animation = &"punch"
+animation = &"barrage"
 autoplay = "idle"
 
 [node name="DamageE1" type="Area2D" parent="." groups=["enemy1_attack"]]
@@ -192,5 +195,20 @@ position = Vector2(14, -6)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_wjv61")
 debug_color = Color(0.875056, 0.000431444, 0.836621, 0.42)
+
+[node name="barrage_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("36_lq4xe")
+volume_db = -15.0
+playback_type = 1
+
+[node name="punch_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("37_5w1ba")
+volume_db = -15.0
+playback_type = 1
+
+[node name="kick_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("38_21xpv")
+volume_db = -15.0
+playback_type = 1
 
 [connection signal="animation_finished" from="theWorld_anim" to="." method="_on_the_world_anim_animation_finished"]

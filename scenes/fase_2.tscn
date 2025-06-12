@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=4 uid="uid://1cg3m6f0ixyk"]
+[gd_scene load_steps=22 format=4 uid="uid://1cg3m6f0ixyk"]
 
 [ext_resource type="Texture2D" uid="uid://cmlxv44ckqmyd" path="res://sprites/Cave Tileset/Brown_Tile_Terrain (16 x 16).png" id="1_rikq0"]
+[ext_resource type="Script" uid="uid://cpwgf81dbekx5" path="res://scripts/fase_2.gd" id="1_s1htv"]
 [ext_resource type="Texture2D" uid="uid://ri1w2rtnifst" path="res://sprites/Cave Tileset/Scaffolding_and_BG_Parts (16 x 16).png" id="2_4akv0"]
 [ext_resource type="PackedScene" uid="uid://bad04yp2jw8kb" path="res://entitites/Player.tscn" id="2_6vo7e"]
 [ext_resource type="Texture2D" uid="uid://ckl3hl7fxlpi8" path="res://sprites/5 - Misc. universal tiles/Metal_Wire_fence (16 x 16).png" id="3_s1etw"]
@@ -10,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ciadblr8p0v7d" path="res://sprites/Cave Tileset/cave-bg.png" id="7_s1etw"]
 [ext_resource type="PackedScene" uid="uid://c767e3ml71xjo" path="res://entitites/death_zone.tscn" id="9_3rj3r"]
 [ext_resource type="PackedScene" uid="uid://b07wlx5vdkvnc" path="res://aula/entidades/camera_player.tscn" id="10_1eq8h"]
+[ext_resource type="AudioStream" uid="uid://deb1bhj3b53gs" path="res://sounds/fase_2.ogg" id="12_s1htv"]
 [ext_resource type="PackedScene" uid="uid://w0aoap7ccnac" path="res://entitites/Enemy2.tscn" id="12_td0eq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vo7e"]
@@ -410,6 +412,7 @@ sources/3 = SubResource("TileSetAtlasSource_td0eq")
 size = Vector2(30, 220.5)
 
 [node name="fase_2" type="Node2D"]
+script = ExtResource("1_s1htv")
 metadata/_edit_vertical_guides_ = [1700.0]
 
 [node name="ground" type="TileMapLayer" parent="."]
@@ -470,6 +473,11 @@ position = Vector2(656, 154)
 
 [node name="Enemy4" parent="." instance=ExtResource("12_td0eq")]
 position = Vector2(927, 26)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_s1htv")
+volume_db = -23.0
+autoplay = true
 
 [connection signal="area_entered" from="DeathZone" to="Node2D" method="_on_death_zone_area_entered"]
 

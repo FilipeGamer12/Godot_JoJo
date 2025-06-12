@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bad04yp2jw8kb"]
+[gd_scene load_steps=55 format=3 uid="uid://bad04yp2jw8kb"]
 
 [ext_resource type="Script" uid="uid://dolssjcmr46wm" path="res://scripts/player.gd" id="1_cfq1j"]
 [ext_resource type="Texture2D" uid="uid://b2dxlcj4vmwq5" path="res://others/recortes/player/counter/Slice 2.png" id="2_aj3i7"]
@@ -45,6 +45,11 @@
 [ext_resource type="Texture2D" uid="uid://cxdfj1nmp2suq" path="res://others/recortes/player/walking/Slice 40.png" id="33_4os38"]
 [ext_resource type="Texture2D" uid="uid://ww8e7y48560s" path="res://others/recortes/player/walking/Slice 41.png" id="34_7uku5"]
 [ext_resource type="Texture2D" uid="uid://bxsrytuq2a4v" path="res://others/recortes/player/walking/Slice 42.png" id="35_3ilm3"]
+[ext_resource type="AudioStream" uid="uid://d0pqia7rx57fa" path="res://sounds/player/punch.ogg" id="46_3ilm3"]
+[ext_resource type="AudioStream" uid="uid://bipkx2wwipeei" path="res://sounds/player/light_punch.ogg" id="47_77gjo"]
+[ext_resource type="AudioStream" uid="uid://dvh4fi3pdnehs" path="res://sounds/player/heavy_punch.ogg" id="48_rviga"]
+[ext_resource type="AudioStream" uid="uid://lgni4rf6jb7h" path="res://sounds/player/counter.ogg" id="49_0qx57"]
+[ext_resource type="AudioStream" uid="uid://bla3uqekdrjyw" path="res://sounds/player/stand.ogg" id="50_qe3mk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pmnq2"]
 animations = [{
@@ -249,6 +254,31 @@ position = Vector2(25, -9)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_aj3i7")
 debug_color = Color(0, 0.648457, 0.180153, 0.42)
+
+[node name="punch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("46_3ilm3")
+volume_db = -15.0
+playback_type = 1
+
+[node name="light_punch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("47_77gjo")
+volume_db = -15.0
+playback_type = 1
+
+[node name="heavy_punch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("48_rviga")
+volume_db = -15.0
+playback_type = 1
+
+[node name="counter" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("49_0qx57")
+volume_db = -15.0
+playback_type = 1
+
+[node name="stand" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("50_qe3mk")
+volume_db = -15.0
+playback_type = 1
 
 [connection signal="animation_finished" from="Idle" to="." method="_on_idle_animation_finished"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

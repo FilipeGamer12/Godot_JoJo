@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cookm3h067utr"]
+[gd_scene load_steps=34 format=4 uid="uid://cookm3h067utr"]
 
 [ext_resource type="Texture2D" uid="uid://b8o34pan08obi" path="res://sprites/5 - Misc. universal tiles/Blocks (16 x 16).png" id="1_3kx2i"]
 [ext_resource type="PackedScene" uid="uid://bad04yp2jw8kb" path="res://entitites/Player.tscn" id="1_7flai"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://w0aoap7ccnac" path="res://entitites/Enemy2.tscn" id="17_f34hj"]
 [ext_resource type="PackedScene" uid="uid://cprk6n827bddb" path="res://entitites/enemy_3.tscn" id="18_0078o"]
 [ext_resource type="FontFile" uid="uid://b6yfq0rse4cxs" path="res://others/fonts/Minecraftia-Regular.ttf" id="20_xdmg2"]
+[ext_resource type="AudioStream" uid="uid://baor1qr8nyreu" path="res://sounds/fase_3.ogg" id="21_0g1jv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qjtux"]
 texture = ExtResource("1_3kx2i")
@@ -206,6 +207,7 @@ tile_map_data = PackedByteArray("AAAAAAsAAQABAAMAAAABAAsAAQAEAAEAAAACAAsAAQAEAAE
 tile_set = SubResource("TileSet_siigq")
 
 [node name="props" type="TileMapLayer" parent="."]
+z_index = -6
 tile_map_data = PackedByteArray("AAALAAcAAQAAAAAAAAALAAkABAAAAAAAAAALAAoABAAAAAEAAAAMAAkABAABAAAAAAAMAAoABAABAAEAAAAGAAcAAQAAAAAAAAAAAAIAAgAAAAAAAAAAAAMAAgAAAAEAAAAAAAQAAgAAAAIAAAAAAAUAAgAAAAMAAAABAAIAAgABAAAAAAABAAMAAgABAAEAAAABAAQAAgABAAIAAAABAAUAAgABAAMAAAACAAIAAgACAAAAAAACAAMAAgACAAEAAAACAAQAAgACAAIAAAACAAUAAgACAAMAAAACAAYAAgACAAQAAAACAAcAAgACAAUAAAACAAgAAgACAAYAAAACAAkAAgACAAcAAAACAAoAAgACAAgAAAADAAIAAgADAAAAAAADAAMAAgADAAEAAAADAAQAAgADAAIAAAADAAUAAgADAAMAAAADAAYAAgADAAQAAAADAAcAAgADAAUAAAADAAgAAgADAAYAAAADAAkAAgADAAcAAAAEAAIAAgAEAAAAAAAEAAMAAgAEAAEAAAAEAAQAAgAEAAIAAAAEAAUAAgAEAAMAAAAFAAIAAgAFAAAAAAAFAAMAAgAFAAEAAAArAPf/BQAAAAAAAAArAPj/BQAAAAEAAAArAPn/BQAAAAIAAAAsAPf/BQABAAAAAAAsAPj/BQABAAEAAAAsAPn/BQABAAIAAAAsAPr/BQABAAMAAAAtAPf/BQACAAAAAAAtAPj/BQACAAEAAAAdAAEABAAAAAAAAAAdAAIABAAAAAEAAAAeAAEABAABAAAAAAAeAAIABAABAAEAAAAtAOL/AQAAAAAAAAAxAOL/AQAAAAAAAAAxAOT/BAAAAAAAAAAxAOX/BAAAAAEAAAAyAOT/BAABAAAAAAAyAOX/BAABAAEAAAAKAOj/BQAAAAAAAAAKAOn/BQAAAAEAAAAKAOr/BQAAAAIAAAALAOj/BQABAAAAAAALAOn/BQABAAEAAAALAOr/BQABAAIAAAALAOv/BQABAAMAAAAMAOj/BQACAAAAAAAMAOn/BQACAAEAAAANAOr/BAAAAAAAAAANAOv/BAAAAAEAAAAOAOr/BAABAAAAAAAOAOv/BAABAAEAAAAJAPX/AAAAAAAAAAAkAOb/AAAAAAAAAAADAAoAAgADAAgAAAAEAAoAAAAAAAAAAAAvAAAAAwADAAEAAAAvAAEAAwADAAIAAAAwAAAAAwAEAAEAAAAwAAEAAwAEAAIAAAAxAAAAAwAFAAEAAAAxAAEAAwAFAAIAAAAdAPX/AwAGAAIAAAAiAOX/AwABAAEAAAAiAOb/AwABAAIAAAAjAOX/AwACAAEAAAAjAOb/AwACAAIAAAA=")
 tile_set = SubResource("TileSet_qjtux")
 
@@ -238,7 +240,7 @@ texture = ExtResource("2_ko64l")
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Player" parent="." instance=ExtResource("1_7flai")]
-position = Vector2(21, 158)
+position = Vector2(24, 158)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -295,6 +297,12 @@ offset_right = 548.0
 offset_bottom = -462.0
 theme_override_fonts/font = ExtResource("20_xdmg2")
 text = "Derrote Dio!"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_0g1jv")
+volume_db = -20.0
+autoplay = true
+playback_type = 1
 
 [connection signal="area_entered" from="lava/DeathZone" to="Player" method="_on_death_zone_area_entered"]
 

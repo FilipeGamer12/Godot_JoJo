@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqxh7tm53vwya"]
+[gd_scene load_steps=5 format=3 uid="uid://bqxh7tm53vwya"]
 
 [ext_resource type="Script" uid="uid://bbs6bbq4d18uu" path="res://scripts/end_game.gd" id="1_0py74"]
 [ext_resource type="FontFile" uid="uid://b6yfq0rse4cxs" path="res://others/fonts/Minecraftia-Regular.ttf" id="1_uwdrl"]
 [ext_resource type="Texture2D" uid="uid://daajeoyhbohdx" path="res://others/assets/endGame.jpeg" id="2_0py74"]
+[ext_resource type="AudioStream" uid="uid://dnye283vneand" path="res://sounds/end.ogg" id="4_5pifh"]
 
 [node name="endGame" type="Node2D"]
 script = ExtResource("1_0py74")
@@ -36,6 +37,12 @@ offset_top = 176.0
 offset_right = 170.0
 offset_bottom = 207.0
 text = "Menu"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_5pifh")
+volume_db = -20.0
+autoplay = true
+playback_type = 1
 
 [connection signal="pressed" from="playAgain" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="backMenu" to="." method="_on_back_menu_pressed"]
