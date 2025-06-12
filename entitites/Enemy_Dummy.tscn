@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://37mt24b3fowb"]
+
+[ext_resource type="Script" uid="uid://hvmkfqfxlr5q" path="res://scripts/enemy_dummy.gd" id="2_48wf0"]
+[ext_resource type="Texture2D" uid="uid://dhywfifmjd13r" path="res://others/pack de sprites de pucci/autor 0011_210-2.png" id="2_ooh4e"]
+[ext_resource type="Texture2D" uid="uid://dacgque1g7if8" path="res://others/pack de sprites de pucci/autor 0011_0-0.png" id="3_m7q4i"]
+[ext_resource type="Texture2D" uid="uid://wlv72pvel2rh" path="res://others/pack de sprites de pucci/autor 0011_0-1.png" id="4_tj5nu"]
+[ext_resource type="Texture2D" uid="uid://bwjuaio58dxak" path="res://others/pack de sprites de pucci/autor 0011_0-2.png" id="5_jrxhi"]
+[ext_resource type="Texture2D" uid="uid://w137tnw8bht5" path="res://others/pack de sprites de pucci/autor 0011_0-3.png" id="6_gckdm"]
+[ext_resource type="Texture2D" uid="uid://16fqos73imus" path="res://others/pack de sprites de pucci/autor 0011_0-4.png" id="7_uexhc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0bvk8"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("2_ooh4e")
+}],
+"loop": false,
+"name": &"died",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_m7q4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tj5nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jrxhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gckdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uexhc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cf1ul"]
+size = Vector2(14, 37.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_055ux"]
+radius = 14.0
+height = 44.0
+
+[node name="Enemy_Dummy" type="CharacterBody2D"]
+z_index = -1
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("2_48wf0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.12483, 0.983046)
+scale = Vector2(0.307366, 0.307366)
+sprite_frames = SubResource("SpriteFrames_0bvk8")
+animation = &"died"
+autoplay = "idle"
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, -0.455)
+shape = SubResource("RectangleShape2D_cf1ul")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="hitbox_shape" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CapsuleShape2D_055ux")
+debug_color = Color(0.782224, 0.435006, 0.0326525, 0.42)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

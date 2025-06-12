@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct4umk6m63xs3"]
+
+[ext_resource type="Script" uid="uid://cahsolpmlwyb5" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="FontFile" uid="uid://b6yfq0rse4cxs" path="res://others/fonts/Minecraftia-Regular.ttf" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://3aes13hf5j7u" path="res://others/assets/background.png" id="3_con2f"]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_yqeox")
+
+[node name="title" type="Label" parent="."]
+z_index = 1
+offset_left = 48.0
+offset_top = 27.0
+offset_right = 236.0
+offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("2_vjb58")
+text = "Jogo Bom
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="play button" type="Button" parent="."]
+z_index = 1
+offset_left = 105.0
+offset_top = 119.0
+offset_right = 185.0
+offset_bottom = 159.0
+theme_override_fonts/font = ExtResource("2_vjb58")
+text = "Play"
+
+[node name="credits" type="Button" parent="."]
+z_index = 1
+offset_left = 113.0
+offset_top = 165.0
+offset_right = 176.0
+offset_bottom = 196.0
+text = "Credits
+"
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(143.75, 103.75)
+scale = Vector2(0.281738, 0.203613)
+texture = ExtResource("3_con2f")
+
+[connection signal="pressed" from="play button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]

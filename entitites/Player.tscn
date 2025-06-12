@@ -1,0 +1,223 @@
+[gd_scene load_steps=43 format=3 uid="uid://bad04yp2jw8kb"]
+
+[ext_resource type="Script" uid="uid://dolssjcmr46wm" path="res://scripts/player.gd" id="1_cfq1j"]
+[ext_resource type="Texture2D" uid="uid://cdqax6hvnadrt" path="res://others/Jotaro/jotaro_0-8.png" id="2_bt0ph"]
+[ext_resource type="Texture2D" uid="uid://cfb6t50b4unw2" path="res://others/Jotaro/jotaro_210-0.png" id="2_pmnq2"]
+[ext_resource type="Texture2D" uid="uid://dj2tplw1i22q1" path="res://others/Jotaro/jotaro_210-1.png" id="3_e7x2s"]
+[ext_resource type="Texture2D" uid="uid://byxi6vvxmgnwa" path="res://others/Jotaro/jotaro_0-9.png" id="3_rgg0c"]
+[ext_resource type="Texture2D" uid="uid://b8qyycg5hiwhb" path="res://others/Jotaro/jotaro_0-10.png" id="4_23l2p"]
+[ext_resource type="Texture2D" uid="uid://0at27272vrub" path="res://others/Jotaro/jotaro_210-2.png" id="4_d44gf"]
+[ext_resource type="Texture2D" uid="uid://cs7w3ngi1u0s4" path="res://others/Jotaro/jotaro_210-3.png" id="5_4bavy"]
+[ext_resource type="Texture2D" uid="uid://cv71xm2okdtpk" path="res://others/Jotaro/jotaro_0-16.png" id="5_d4oqe"]
+[ext_resource type="Texture2D" uid="uid://0w58lexjyuyj" path="res://others/Jotaro/jotaro_0-17.png" id="6_b6ggy"]
+[ext_resource type="Texture2D" uid="uid://vwcgvic2mr03" path="res://others/Jotaro/jotaro_210-4.png" id="6_yq68r"]
+[ext_resource type="Texture2D" uid="uid://udacfe3p0n31" path="res://others/Jotaro/jotaro_20-0.png" id="7_mea7i"]
+[ext_resource type="Texture2D" uid="uid://h11f5riyd3rm" path="res://others/Jotaro/jotaro_210-5.png" id="7_uv5uv"]
+[ext_resource type="Texture2D" uid="uid://bfnvr6xpn7b5l" path="res://others/Jotaro/jotaro_210-6.png" id="8_053xu"]
+[ext_resource type="Texture2D" uid="uid://do53su2wsg25c" path="res://others/Jotaro/jotaro_20-1.png" id="8_en1ru"]
+[ext_resource type="Texture2D" uid="uid://cvgwdblot5x60" path="res://others/Jotaro/jotaro_210-7.png" id="9_aj3i7"]
+[ext_resource type="Texture2D" uid="uid://cejleh76qbypg" path="res://others/Jotaro/jotaro_20-2.png" id="9_arei5"]
+[ext_resource type="Texture2D" uid="uid://1sdojcxyou7v" path="res://others/Jotaro/jotaro_20-3.png" id="10_g7qy3"]
+[ext_resource type="Texture2D" uid="uid://kyqlx5g5xlrq" path="res://others/Jotaro/jotaro_20-4.png" id="11_cjy7x"]
+[ext_resource type="Texture2D" uid="uid://dbvq3rrsvke0l" path="res://others/Jotaro/jotaro_20-5.png" id="12_c572d"]
+[ext_resource type="Texture2D" uid="uid://bfgkts5h4nmig" path="res://others/Jotaro/jotaro_20-6.png" id="13_mwtv3"]
+[ext_resource type="Texture2D" uid="uid://c2i161a5p0fly" path="res://others/Jotaro/jotaro_20-7.png" id="14_bmoh8"]
+[ext_resource type="Texture2D" uid="uid://cu7hl40ce6xbg" path="res://others/Jotaro/jotaro_20-8.png" id="15_umicm"]
+[ext_resource type="Texture2D" uid="uid://ca87lufgs171g" path="res://others/Jotaro/jotaro_20-9.png" id="16_c4rmt"]
+[ext_resource type="Texture2D" uid="uid://du74n3vn6gtai" path="res://others/Jotaro/jotaro_20-10.png" id="17_q7r71"]
+[ext_resource type="Texture2D" uid="uid://dqiguk8b21pdf" path="res://others/Jotaro/jotaro_20-11.png" id="18_dvidb"]
+[ext_resource type="Texture2D" uid="uid://l0k26wesmhkp" path="res://others/Jotaro/jotaro_20-12.png" id="19_f56rd"]
+[ext_resource type="Texture2D" uid="uid://bjv6note82t05" path="res://others/Jotaro/jotaro_20-13.png" id="20_q6g2p"]
+[ext_resource type="Texture2D" uid="uid://budm28f3uuym1" path="res://others/Jotaro/jotaro_20-14.png" id="21_jd40y"]
+[ext_resource type="Texture2D" uid="uid://b7vb17a0jiwwy" path="res://others/Jotaro/jotaro_20-15.png" id="22_3inf7"]
+[ext_resource type="Texture2D" uid="uid://c8pa5pj34r4g" path="res://others/Jotaro/jotaro_230-0.png" id="31_u7j4d"]
+[ext_resource type="Texture2D" uid="uid://6k8rrvrrbas1" path="res://others/Jotaro/jotaro_230-1.png" id="32_wqu1b"]
+[ext_resource type="Texture2D" uid="uid://bpqxjn3rfm1wv" path="res://others/Jotaro/jotaro_230-2.png" id="33_4os38"]
+[ext_resource type="Texture2D" uid="uid://cvqwkghgt6rl5" path="res://others/Jotaro/jotaro_230-3.png" id="34_7uku5"]
+[ext_resource type="Texture2D" uid="uid://chqfr5h3gooh2" path="res://others/Jotaro/jotaro_230-4.png" id="35_3ilm3"]
+[ext_resource type="Texture2D" uid="uid://tsmqbstd60ca" path="res://others/Jotaro/jotaro_230-5.png" id="36_77gjo"]
+[ext_resource type="Texture2D" uid="uid://cdkdacnab7omi" path="res://others/Jotaro/jotaro_230-7.png" id="37_rviga"]
+[ext_resource type="Texture2D" uid="uid://ma47ah31knhq" path="res://others/Jotaro/jotaro_230-8.png" id="38_0qx57"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pmnq2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bt0ph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rgg0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_23l2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d4oqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b6ggy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6wnxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pmnq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e7x2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d44gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4bavy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yq68r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uv5uv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_053xu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_aj3i7")
+}],
+"loop": true,
+"name": &"heavy punch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_u7j4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_wqu1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_4os38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_7uku5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_3ilm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_77gjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_rviga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_0qx57")
+}],
+"loop": true,
+"name": &"test",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_mea7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_en1ru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_arei5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g7qy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cjy7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_c572d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mwtv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_bmoh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_umicm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_c4rmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_q7r71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dvidb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_f56rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_q6g2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_jd40y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3inf7")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfq1j"]
+size = Vector2(14, 39)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pmnq2"]
+height = 42.0
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 2
+script = ExtResource("1_cfq1j")
+
+[node name="Idle" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -2)
+scale = Vector2(0.359375, 0.359375)
+sprite_frames = SubResource("SpriteFrames_pmnq2")
+animation = &"idle"
+autoplay = "idle"
+frame = 3
+frame_progress = 0.969323
+
+[node name="Running" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-1, -3)
+scale = Vector2(0.359375, 0.359375)
+sprite_frames = SubResource("SpriteFrames_6wnxb")
+animation = &"walking"
+autoplay = "walking"
+frame_progress = 0.374658
+
+[node name="Teste" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-1, -2)
+scale = Vector2(0.359375, 0.359375)
+sprite_frames = SubResource("SpriteFrames_6wnxb")
+animation = &"walking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_cfq1j")
+
+[node name="hitbox" type="Area2D" parent="." groups=["Player"]]
+
+[node name="hitbox_shape" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_pmnq2")
+debug_color = Color(0.808436, 0.413473, 0, 0.42)

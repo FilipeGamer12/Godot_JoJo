@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://da40ajew8f4pe"]
+
+[ext_resource type="Script" uid="uid://qbhmqk7affv" path="res://scripts/game_over.gd" id="1_o2t51"]
+
+[node name="Game Over" type="Node2D"]
+script = ExtResource("1_o2t51")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 293.0
+offset_bottom = 208.0
+color = Color(0.734513, 0.488479, 0.296783, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 89.0
+offset_top = 40.0
+offset_right = 204.0
+offset_bottom = 63.0
+text = "VOCÊ MORREU"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 86.0
+offset_top = 87.0
+offset_right = 205.0
+offset_bottom = 137.0
+text = "Restart Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

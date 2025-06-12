@@ -1,0 +1,154 @@
+[gd_scene load_steps=20 format=3 uid="uid://bvcuae6hx1kb2"]
+
+[ext_resource type="Script" uid="uid://bbv8380ls0sf6" path="res://aula/scripts/nigga.gd" id="1_5x2le"]
+[ext_resource type="Texture2D" uid="uid://cu1o87kc03vev" path="res://aula/sprites/Sprite Pack 7/1 - Diego/Running (32 x 48).png" id="1_un35n"]
+[ext_resource type="Texture2D" uid="uid://dbbabl6cifowj" path="res://aula/sprites/Sprite Pack 7/1 - Diego/Shooting_while_standing (48 x 48).png" id="2_peage"]
+[ext_resource type="Texture2D" uid="uid://bawadg60vkwk4" path="res://aula/sprites/Sprite Pack 7/1 - Diego/Hurt (32 x 48).png" id="2_u5d6w"]
+[ext_resource type="Script" uid="uid://dekcttwmdkj6b" path="res://aula/scripts/hitbox.gd" id="3_piy4y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5x2le"]
+height = 40.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0wvk"]
+atlas = ExtResource("2_peage")
+region = Rect2(0, 0, 36, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjxdq"]
+atlas = ExtResource("2_peage")
+region = Rect2(48, 0, 36, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkkoe"]
+atlas = ExtResource("2_peage")
+region = Rect2(96, 0, 36, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl7r5"]
+atlas = ExtResource("2_u5d6w")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piy4y"]
+atlas = ExtResource("1_un35n")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5d6w"]
+atlas = ExtResource("1_un35n")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_peage"]
+atlas = ExtResource("1_un35n")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu8sg"]
+atlas = ExtResource("1_un35n")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uochw"]
+atlas = ExtResource("1_un35n")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plojv"]
+atlas = ExtResource("1_un35n")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hl7r5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0wvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjxdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkkoe")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl7r5")
+}],
+"loop": false,
+"name": &"morto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piy4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5d6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peage")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu8sg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uochw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plojv")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.5
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5x2le"]
+size = Vector2(20, 34)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_peage"]
+radius = 5.0
+height = 60.0
+
+[node name="Nigga" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_5x2le")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 4)
+shape = SubResource("CapsuleShape2D_5x2le")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hl7r5")
+animation = &"attack"
+autoplay = "walk"
+frame = 2
+frame_progress = 1.0
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Enemies"]]
+collision_layer = 5
+script = ExtResource("3_piy4y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-3, 1)
+shape = SubResource("RectangleShape2D_5x2le")
+debug_color = Color(0.831078, 0.392466, 0, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.759
+
+[node name="Detector de chão" type="RayCast2D" parent="."]
+position = Vector2(8, -4)
+target_position = Vector2(0, 35)
+
+[node name="Detector de Player" type="RayCast2D" parent="."]
+position = Vector2(0, -4)
+target_position = Vector2(225, 0)
+collision_mask = 2
+
+[node name="Temp_Attack_Area" type="Area2D" parent="." groups=["DeathZone"]]
+
+[node name="temp_shoot" type="CollisionShape2D" parent="Temp_Attack_Area"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(39, 8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_peage")
+debug_color = Color(0.996078, 0, 0, 0.419608)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

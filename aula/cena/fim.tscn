@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq4u8xl2j8gig"]
+
+[ext_resource type="Script" uid="uid://bcmxip5a2rxb3" path="res://aula/scripts/fim_de_jogo.gd" id="1_pem5p"]
+
+[node name="Fim" type="Node2D"]
+script = ExtResource("1_pem5p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 292.0
+offset_bottom = 213.0
+color = Color(0.848903, 0.672363, 7.70092e-07, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 38.0
+offset_right = 253.0
+offset_bottom = 61.0
+text = "Parabéns, você zerou o jogo!"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 78.0
+offset_top = 94.0
+offset_right = 205.0
+offset_bottom = 133.0
+text = "Voltar ao Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

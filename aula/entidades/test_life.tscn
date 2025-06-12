@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dopeb7mhhotwj"]
+
+[ext_resource type="Texture2D" uid="uid://vgkw4fut2fr8" path="res://others/Light_green.png" id="1_hn7s7"]
+
+[node name="LightGreen" type="Sprite2D"]
+scale = Vector2(1, 0.04)
+texture = ExtResource("1_hn7s7")
+centered = false

@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1go3n3bd46yf"]
+
+[ext_resource type="Texture2D" uid="uid://dgqs38ff2vuo" path="res://others/DIO/Stand Dio/10000-0.png" id="1_axd1v"]
+[ext_resource type="Texture2D" uid="uid://dbhffusncd8fk" path="res://others/DIO/Stand Dio/10000-1.png" id="2_47u1d"]
+[ext_resource type="Texture2D" uid="uid://deds61uri4pc8" path="res://others/DIO/Stand Dio/10000-2.png" id="3_k7h8a"]
+[ext_resource type="Texture2D" uid="uid://bi7e2rbym1rq" path="res://others/DIO/Stand Dio/10000-3.png" id="4_uahea"]
+[ext_resource type="Texture2D" uid="uid://cvf3m0i7rt7c2" path="res://others/DIO/Stand Dio/10000-4.png" id="5_tptll"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gr2s7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axd1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_47u1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k7h8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uahea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tptll")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yaxlw"]
+size = Vector2(64, 130)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gr2s7")
+frame_progress = 0.887718
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11, 0)
+shape = SubResource("RectangleShape2D_yaxlw")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b07wlx5vdkvnc"]
+
+[ext_resource type="Script" uid="uid://blv6xetsa6ih" path="res://aula/scripts/camera_player.gd" id="1_vhnty"]
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2(142, 104)
+script = ExtResource("1_vhnty")

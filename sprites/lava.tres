@@ -1,0 +1,19 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cdwxj48f71vao"]
+
+[ext_resource type="Texture2D" uid="uid://djuu528jdixr2" path="res://sprites/5 - Misc. universal tiles/Lava_frames (16 x 32).png" id="1_yphn2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yphn2"]
+texture = ExtResource("1_yphn2")
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/0 = 0
+
+[resource]
+sources/1 = SubResource("TileSetAtlasSource_yphn2")
